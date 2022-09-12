@@ -3,20 +3,50 @@ install packages for various database providers
 
 
 # SQL Server
-Database First
+Database First --WINDOWS
 
 * Install-Package Microsoft.EntityFrameworkCore
 * Install-Package Microsoft.EntityFrameworkCore.SqlServer
 * Install-Package Microsoft.EntityFrameworkCore.Tools
 
 Connection String:
-Scaffold-DBContext "Server=<your-server-database>;Database=Sales;User=<your-user-database>;Pwd=<your-password-database>" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force -nopluralize
+Scaffold-DBContext "Server=<your-server-database>;Database=<your-name-database>;User=<your-user-database>;Pwd=<your-password-database>" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force -nopluralize
 
 In appsettings.json: 
 
   "ConnectionStrings": {
-    "DevConnection": "Server=<your-server-database>;Database=Sales;User=<your-user-database>;Pwd=<your-password-database>"
+    "DevConnection": "Server=<your-server-database>;Database=<your-name-database>;User=<your-user-database>;Pwd=<your-password-database>"
   }
+------------------------------------------------------------------------------------------------------  
+ Database First --MAC
+ 
+* dotnet add package Microsoft.EntityFrameworkCore
+* dotnet add package Microsoft.EntityFrameworkCore.Tools
+* dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+* dotnet add package Microsoft.EntityFrameworkCore.Design
+
+—All commands Entity Framework Core
+dotnet ef
+
+Connection String:
+dotnet ef dbcontext Scaffold "Server=<your-server-database>; Initial Catalog=<your-name-database>;User ID=<your-user-database>;Password=<your-password-database>" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --no-pluralize
+
+------------------------------------------------------------------------------------------------------
+Code First --MAC
+* dotnet add package Microsoft.EntityFrameworkCore
+* dotnet add package Microsoft.EntityFrameworkCore.Tools
+* dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+* dotnet add package Microsoft.EntityFrameworkCore.Design
+
+—All commands Entity Framework Core
+dotnet ef
+
+—Add migration
+dotnet ef migrations add ‘aquí detallo un texto para la nueva migración’
+—Remove migration
+dotnet ef migrations remove
+—Update database
+dotnet ef database update
 
 
 # MySQL
