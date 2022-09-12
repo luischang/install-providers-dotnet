@@ -26,6 +26,7 @@ In appsettings.json:
 * dotnet add package Microsoft.EntityFrameworkCore.Design
 
 —All commands Entity Framework Core
+  
 dotnet ef
 
 Connection String:
