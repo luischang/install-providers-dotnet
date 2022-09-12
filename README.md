@@ -42,12 +42,15 @@ Code First --MAC
 dotnet ef
 
 —Add migration
+  
 dotnet ef migrations add ‘aquí detallo un texto para la nueva migración’
   
 —Remove migration
+  
 dotnet ef migrations remove
   
 —Update database
+  
 dotnet ef database update
 
 
