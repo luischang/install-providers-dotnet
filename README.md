@@ -73,3 +73,9 @@ In appsettings.json:
   "ConnectionStrings": {
     "DevConnection": "server=<your-server-database>;port=3306;uid=<your-user-database>;pwd=<your-password-database>;database=<your-name-database>" 
   }
+  
+  # SONAR in MAC M1
+  
+  docker run -d -p 8084:9000 mwizner/sonarqube:8.7.1-community
+
+
