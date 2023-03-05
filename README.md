@@ -11,7 +11,9 @@ Database First --WINDOWS
 
 Connection String:
 Scaffold-DBContext "Server=<your-server-database>;Database=<your-name-database>;User=<your-user-database>;Pwd=<your-password-database>" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force -nopluralize
-**NET 7**
+
+NET 7
+
 Scaffold-DBContext "Server=<your-server-database>;Database=<your-name-database>;User=<your-user-database>;Pwd=<your-password-database>;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Data -Force -nopluralize
 
 In appsettings.json: 
