@@ -67,7 +67,7 @@ Packages by Package Manager Console
 * Install-Package Microsoft.EntityFrameworkCore.Design
 * Install-Package Microsoft.EntityFrameworkCore.Tools
 * Install-Package Pomelo.EntityFrameworkCore.MySql
-* Install-Package MySql.Data.EntityFrameworkCore.Design
+* Install-Package MySql.Data
 
 Connection String:
 Scaffold-DbContext "server=<your-server-database>;port=3306;uid=<your-user-database>;pwd=<your-password-database>;database=<your-name-database>" Pomelo.EntityFrameworkCore.MySql -OutputDir Data -nopluralize
