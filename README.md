@@ -3,7 +3,7 @@ install packages for various database providers
 
 
 # SQL Server
-Database First --WINDOWS
+Database First --VISUAL STUDIO (WINDOWS)
 
 * Install-Package Microsoft.EntityFrameworkCore (10.0.0)
 * Install-Package Microsoft.EntityFrameworkCore.SqlServer (10.0.0)
@@ -23,7 +23,7 @@ In appsettings.json:
     "DevConnection": "Server=<your-server-database>;Database=<your-name-database>;User=<your-user-database>;Pwd=<your-password-database>;TrustServerCertificate=True"
   }
 ------------------------------------------------------------------------------------------------------  
- Database First --MAC / LINUX (NET 10)
+ Database First --VSCODE (Windows / Mac / Linux, NET 10)
  
 * dotnet add package Microsoft.EntityFrameworkCore --version 10.0.0
 * dotnet add package Microsoft.EntityFrameworkCore.Tools --version 10.0.0
@@ -38,7 +38,7 @@ Connection String:
 dotnet ef dbcontext Scaffold "Server=<your-server-database>; Initial Catalog=<your-name-database>;User ID=<your-user-database>;Password=<your-password-database>;TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --no-pluralize
 
 ------------------------------------------------------------------------------------------------------
-Code First --MAC / LINUX (NET 10)
+Code First --VSCODE (Windows / Mac / Linux, NET 10)
 * dotnet add package Microsoft.EntityFrameworkCore --version 10.0.0
 * dotnet add package Microsoft.EntityFrameworkCore.Tools --version 10.0.0
 * dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 10.0.0
@@ -61,8 +61,7 @@ dotnet ef database update
 
 
 # MySQL
-Database first
-
+Database first --VISUAL STUDIO (WINDOWS)
 
 Packages by Package Manager Console
 * Install-Package Microsoft.EntityFrameworkCore.Design (10.0.0)
@@ -78,9 +77,38 @@ In appsettings.json:
   "ConnectionStrings": {
     "DevConnection": "server=<your-server-database>;port=3306;uid=<your-user-database>;pwd=<your-password-database>;database=<your-name-database>" 
   }
-  
-  # SONAR in MAC M1
-  
-  docker run -d -p 8084:9000 mwizner/sonarqube:8.7.1-community
+
+------------------------------------------------------------------------------------------------------
+Database first --VSCODE (Windows / Mac / Linux, NET 10)
+
+* dotnet add package Microsoft.EntityFrameworkCore.Design --version 10.0.0
+* dotnet add package Microsoft.EntityFrameworkCore.Tools --version 10.0.0
+* dotnet add package Pomelo.EntityFrameworkCore.MySql --version 9.0.0
+* dotnet add package MySql.Data --version 26.7.0
+
+—All commands Entity Framework Core
+
+dotnet ef
+
+Connection String:
+dotnet ef dbcontext scaffold "server=<your-server-database>;port=3306;uid=<your-user-database>;pwd=<your-password-database>;database=<your-name-database>" Pomelo.EntityFrameworkCore.MySql --output-dir Data --no-pluralize
+
+In appsettings.json: 
+
+  "ConnectionStrings": {
+    "DevConnection": "server=<your-server-database>;port=3306;uid=<your-user-database>;pwd=<your-password-database>;database=<your-name-database>" 
+  }
+
+—Add migration
+
+dotnet ef migrations add 'aquí detallo un texto para la nueva migración'
+
+—Remove migration
+
+dotnet ef migrations remove
+
+—Update database
+
+dotnet ef database update
 
 
