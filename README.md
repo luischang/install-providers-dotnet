@@ -2,6 +2,57 @@
 install packages for various database providers
 
 
+# Comandos básicos .NET CLI (Windows / Mac / Linux, NET 10)
+
+—Crear un proyecto
+
+dotnet new webapi -n NombreProyecto
+dotnet new mvc -n NombreProyecto
+dotnet new console -n NombreProyecto
+dotnet new classlib -n NombreProyecto
+
+—Crear una solución y agregar proyectos
+
+dotnet new sln -n NombreSolucion
+dotnet sln add ./NombreProyecto/NombreProyecto.csproj
+
+—Restaurar paquetes
+
+dotnet restore
+
+—Compilar (build)
+
+dotnet build
+
+—Ejecutar el proyecto
+
+dotnet run
+
+dotnet run --project ./NombreProyecto
+
+—Ejecutar con recarga automática (hot reload)
+
+dotnet watch run
+
+—Publicar (build de producción)
+
+dotnet publish -c Release -o ./publish
+
+—Ejecutar pruebas
+
+dotnet test
+
+—Limpiar los artefactos de compilación
+
+dotnet clean
+
+—Ver la versión de .NET instalada / SDKs disponibles
+
+dotnet --version
+dotnet --list-sdks
+
+------------------------------------------------------------------------------------------------------
+
 # SQL Server
 Database First --VISUAL STUDIO (WINDOWS)
 
